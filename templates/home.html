@@ -1,0 +1,136 @@
+<!--<!DOCTYPE html>-->
+<!--<html >-->
+<!--&lt;!&ndash;From https://codepen.io/frytyler/pen/EGdtg&ndash;&gt;-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>ML API</title>-->
+<!--  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>-->
+
+
+<!--</head>-->
+
+<!--<body>-->
+<!-- <div class="login">-->
+<!--	<h1>Airfoil Prediction</h1>-->
+
+<!--     &lt;!&ndash; Main Input For Receiving Query to our ML &ndash;&gt;-->
+<!--    <form action="{{ url_for('predict')}}"method="post">-->
+<!--      <input type="text" name="Frequency" placeholder="Frequency" required="required" /><br>-->
+<!--    	<input type="text" name="Angle of attack" placeholder="Angle of attack" required="required" /><br>-->
+<!--        <input type="text" name="Chord length" placeholder="Chord length" required="required" /><br>-->
+<!--        <input type="text" name="Free-stream velocity" placeholder="Free-stream velocity" required="required" /><br>-->
+<!--        <input type="text" name="Suction side" placeholder="Suction side" required="required" /><br>-->
+
+
+
+<!--        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>-->
+<!--    </form>-->
+
+<!--   <br>-->
+<!--   <br>-->
+
+
+<!-- </div>-->
+<!-- {{prediction_text}}-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <style>
+    /* Style the login form */
+    .login {
+      width: 400px;
+      margin: 0 auto;
+      font-family: 'Arimo', sans-serif;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px #999;
+    }
+
+    /* Style the form inputs */
+    .login input[type="text"] {
+      font-size: 16px;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      transition: border-color 0.3s;
+    }
+
+    .login input[type="text"]:focus {
+      border-color: #00bfff;
+    }
+
+    /* Style the form button */
+    .login button[type="submit"] {
+      display: block;
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #00bfff;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login button[type="submit"]:hover {
+      background-color: #0080ff;
+    }
+
+    /* Style the form heading */
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      margin: 0 0 20px 0;
+      color: #00bfff;
+    }
+
+    /* Style the prediction text */
+    .prediction {
+      margin-top: 20px;
+      font-family: 'Hind', sans-serif;
+      font-size: 24px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Airfoil Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Frequency" placeholder="Frequency" required="required" /><br>
+      <input type="text" name="Angle of attack" placeholder="Angle of attack" required="required" /><br>
+      <input type="text" name="Chord length" placeholder="Chord length" required="required" /><br>
+      <input type="text" name="Free-stream velocity" placeholder="Free-stream velocity" required="required" /><br>
+      <input type="text" name="Suction side" placeholder="Suction side" required="required" /><br>
+
+      <button type="submit">Predict</button>
+    </form>
+      {{prediction_text}}
+  </div>
+
+
